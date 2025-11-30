@@ -1,0 +1,86 @@
+{% extends "base.html" %} {% block title %}Author Info - Nuclear Energy{%
+endblock %} {% block content %}
+<article class="post featured">
+  <header class="major">
+    <h1>Author Information</h1>
+    <p>About this project and its creators</p>
+  </header>
+
+  <div class="author-card fade-in">
+    <div class="author-image">
+      <img
+        src="{{ url_for('static', filename='images/Authorinfo.jpg') }}"
+        alt="Michael D."
+      />
+    </div>
+    <div class="author-info">
+      <h2>Michael D.</h2>
+      <p>
+        Michael D. is currently a junior at Central Carolina Academy with a goal
+        to enter the engineering field. Michael D. became obsessed with nuclear
+        energy, going into lots of research, and saw just how useful and
+        beneficial nuclear energy was as a zero emission energy source. Outside
+        of School, Michael likes to read books, play video games on the Xbox,
+        and practice Brazilian Jiu Jitsu.
+      </p>
+    </div>
+  </div>
+
+  <div class="author-card fade-in">
+    <div class="author-image joe-image">
+      <img
+        src="{{ url_for('static', filename='images/IMG_8953.jpg') }}"
+        alt="Joe D."
+      />
+    </div>
+    <div class="author-info">
+      <h2>Joe D.</h2>
+      <p>
+        Joe D. is an AI (Artificial Intelligence) GIS (Geographic Information
+        System) Data Engineer and retired Virginia Air National Guard Geospatial
+        Intelligence Superintendent. With extensive experience in web
+        development as a hobby for friends, family, and organizations, Joe D.
+        assisted with the technical development and implementation of this
+        website to help bring Michael's research to life in an engaging,
+        interactive format. Outside of work, Joe D. enjoys creating websites and
+        supporting various community projects.
+      </p>
+    </div>
+  </div>
+
+  <div class="content-section fade-in">
+    <h2>Project Information</h2>
+    <p>
+      <strong>Course:</strong> ENG 111 - English Composition<br />
+      <strong>Semester:</strong> Fall 2025<br />
+      <strong>Project Type:</strong> Final Research Presentation<br />
+      <strong>Research & Content:</strong> Michael D.<br />
+      <strong>Web Development:</strong> Joe D. (with instructor approval)
+    </p>
+  </div>
+
+  <div class="content-section fade-in">
+    <h2>Project Roles</h2>
+    <p>
+      <strong>Michael D.</strong> conducted all research, writing, and content
+      creation for this project. All text, citations, and academic work are
+      Michael's original work.
+    </p>
+
+    <p>
+      <strong>Joe D.</strong> provided technical assistance with the Flask web
+      application framework, HTML/CSS implementation, and interactive features
+      to present Michael's research in a modern, engaging format.
+    </p>
+  </div>
+
+  <div class="content-section fade-in">
+    <h2>Acknowledgments</h2>
+    <p>
+      The template for this website comes from HTML5 UP (Massively theme),
+      released under the Creative Commons license. All research content and
+      academic work is original to Michael D. for ENG 111, Fall 2025.
+    </p>
+  </div>
+</article>
+{% endblock %}

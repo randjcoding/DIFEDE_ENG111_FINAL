@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Solution & What You Can Do - Nuclear Energy{% endblock %}
+
+{% block content %}
+<article class="post featured">
+    <header class="major">
+        <h1>Solution &amp; What You Can Do</h1>
+        <p>Paths forward for nuclear energy and how you can make a difference</p>
+    </header>
+
+    <div class="content-section fade-in">
+        <h2>The Solution</h2>
+        <p>Modern nuclear reactor technology already exists to make nuclear energy safer, cheaper, and more efficient than ever before. The solution is to teach the U.S. public about SMRs and Gen IV reactor designs, how they compare to previous reactors, and the difference in safety between Chernobyl era reactors and modern day reactors. Three ways that would all work together to increase public perception and knowledge are:</p>
+        
+        <ul style="font-size: 1.1em; line-height: 1.8;">
+            <li>Featuring more books, articles, or sections in newspapers that inform and show comparisons of nuclear power.</li>
+            <li>Holding more public speaking events, online or in person, to have real-time talks/discussions with viewers or other members.</li>
+            <li>Having the institutions in charge of the operation of nuclear power plants be transparent and engage with the community. Holding public hearings on current proceedings, sharing future plans, and showing what is going on inside of the reactors through real time dashboards are all ways to improve transparency.</li>
+        </ul>
+        
+        <h3>Why This Is the Best Solution</h3>
+        <p>All of these solutions together cover a wide range of audiences on various social media or physical platforms that will help teach the U.S. public. Establishing trust with those in charge of the power plants is also huge in influencing how the public perceives nuclear energy. Sweden and France are proof of two countries that built "trust and confidence in the nuclear industry" through transparency and informing the public (Lee).</p>
+    </div>
+
+    <div class="image-carousel fade-in">
+        <div class="carousel-container">
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/Solution what can you do USNRC.svg') }}" alt="U.S. Nuclear Regulatory Commission" />
+                <div class="carousel-caption">
+                    <h3>U.S. Nuclear Regulatory Commission (NRC)</h3>
+                    <p>Ensures safe civilian use of nuclear materials</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/solution what you can do IAEA.png') }}" alt="International Atomic Energy Agency" />
+                <div class="carousel-caption">
+                    <h3>International Atomic Energy Agency (IAEA)</h3>
+                    <p>The world's central forum for scientific and technical cooperation in nuclear energy</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/solution what you can do GENERATION ATOMIC.jpg') }}" alt="Generation Atomic" />
+                <div class="carousel-caption">
+                    <h3>Generation Atomic</h3>
+                    <p>Grassroots organization mobilizing people to advocate for clean energy</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/solution what you can do NUCLEAR MATTERS.jpg') }}" alt="Nuclear Matters" />
+                <div class="carousel-caption">
+                    <h3>Nuclear Matters</h3>
+                    <p>Educational initiative highlighting nuclear energy's role in American energy security</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div class="content-section fade-in">
+        <h2>What You Can Do</h2>
+        <p>Here are three things you can do to help support the growth of nuclear knowledge that take just a minute to do:</p>
+        
+        <ul style="font-size: 1.1em; line-height: 1.8;">
+            <li>Join or donate to groups like <a href="https://www.nuclearmatters.com/" target="_blank">Nuclear Matters</a> or <a href="https://www.mothersfornuclear.org/donate" target="_blank">Mothers for Nuclear</a>.</li>
+            <li>Send a message to your senator to keep funding going for SMR licensing and the ADVANCE Act, an act passed in 2024 requiring the U.S. Nuclear Regulatory Commission to modernize old nuclear regulations (U.S.NRC).</li>
+        </ul>
+
+        <h3>Organizations That Support and Spread Nuclear Awareness</h3>
+        <ul>
+            <li><a href="https://www.generationatomic.org/" target="_blank"><strong>Generation Atomic</strong></a></li>
+            <li><a href="https://www.mothersfornuclear.org/donate" target="_blank"><strong>Mothers for Nuclear</strong></a></li>
+            <li><a href="https://www.nuclearinnovationalliance.org/" target="_blank"><strong>Nuclear Innovation Alliance</strong></a></li>
+            <li><a href="https://www.nuclearmatters.com/" target="_blank"><strong>Nuclear Matters</strong></a></li>
+        </ul>
+
+        <h3>For More Information</h3>
+        <ul>
+            <li><a href="https://world-nuclear.org/Information-Library/" target="_blank"><strong>World Nuclear Association</strong></a></li>
+            <li><a href="https://www.nrc.gov/" target="_blank"><strong>U.S. Nuclear Regulatory Commission</strong></a></li>
+            <li><a href="https://www.iaea.org/newscenter/news/what-is-nuclear-energy-the-science-of-nuclear-power" target="_blank"><strong>IAEA</strong></a></li>
+        </ul>
+    </div>
+</article>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Yesterday's Myths, Today's Reality: The Truth About Modern Nuclear Power{% endblock %}
+
+{% block content %}
+<article class="post featured">
+    <header class="major">
+        <h1>Yesterday's Myths, Today's Reality:<br />The Truth About Modern Nuclear Power</h1>
+        <p>Accurate information about today's reactor designs can change public perception</p>
+    </header>
+
+    <div class="content-section fade-in">
+        <h2>Brief Summary</h2>
+        <p>The focus of modern-day energy production is to find an energy source that can produce enough energy while being green. Nuclear power only generates 12 grams of carbon dioxide per kWh, which is about 68 times less than coal's output of 820 grams of carbon dioxide per kWh ("Carbon Dioxide Emissions From Electricity"). Currently, fossil fuels dominate the field of energy production with ~60%, renewables at 31%, and nuclear at just 9% in 2024 (Héctor et al 1-2).</p>
+        
+        <p>Despite the safety, energy output, environmental friendliness, and readiness of modern nuclear power, it's opposed by the U.S. public because of fear and skepticism holding it back. Accurate information about today's reactor designs can change that.</p>
+    </div>
+
+    <div class="content-section fade-in">
+        <h2>Research Question</h2>
+        <p><strong>How can accurate public understanding of modern nuclear power's benefits beat the public's skepticism and fear, leading to nuclear energy's adoption as an energy source?</strong></p>
+    </div>
+
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/hl9-0orGOu4" 
+            title="Nuclear Energy Video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="image-carousel fade-in">
+        <div class="carousel-container">
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/Home page oldreactor.webp') }}" alt="Historic Nuclear Reactor" />
+                <div class="carousel-caption">
+                    <h3>The Beginning</h3>
+                    <p>Early nuclear reactors paved the way for modern nuclear energy technology</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/homepage modernreactor.jpg') }}" alt="Modern Nuclear Reactor" />
+                <div class="carousel-caption">
+                    <h3>Modern Innovation</h3>
+                    <p>Today's advanced reactors represent cutting-edge engineering and safety</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div class="content-section fade-in">
+        <p style="text-align: center; font-size: 0.9em; margin-top: 2em;">This website was a school project created by Michael D. for ENG 111, Fall 2025.<br />
+        Web development assistance provided by Joe D.</p>
+    </div>
+</article>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}What's the Problem - Nuclear Energy{% endblock %}
+
+{% block content %}
+<article class="post featured">
+    <header class="major">
+        <h1>What's the Problem?</h1>
+        <p>Understanding the challenges and concerns surrounding nuclear energy</p>
+    </header>
+
+    <div class="content-section fade-in">
+        <p>Despite the benefits and use of nuclear energy, it is still opposed by most of the public in the U.S. because of their perception of nuclear energy. The biggest reasons are:</p>
+        
+        <ul style="font-size: 1.1em; line-height: 1.8;">
+            <li><strong>Fear of another accident</strong> like the Chernobyl meltdown and radiation release into the environment. Héctor et al show how "the general public [perceive] nuclear energy with 'fear'" (21).</li>
+            
+            <li><strong>Worry of nuclear proliferation</strong> - the spread of nuclear technology to other groups that do not already have it. "[p]ossibly the strongest argument against nuclear energy is the risk of nuclear proliferation" (Engler and Wherden 290).</li>
+            
+            <li><strong>Nuclear reactors are expensive and slow to build.</strong> Nuclear power plant build costs are "estimated between $14 billion and $30 billion" and an average build time of about "five [to] ten years" (Locknear).</li>
+        </ul>
+    </div>
+
+    <div class="content-grid fade-in">
+        <div class="grid-image hover-zoom">
+            <img src="{{ url_for('static', filename='images/Whats the problem chernobyl.jpg') }}" alt="Chernobyl Nuclear Disaster" />
+        </div>
+        <div class="grid-content">
+            <h2>Why Hasn't This Been Solved?</h2>
+            <p>It hasn't been solved yet because of anti-nuclear sentiments, regulations from the '70s and '80s, and focus on old risks instead of modern fixes.</p>
+        </div>
+    </div>
+</article>
+{% endblock %}

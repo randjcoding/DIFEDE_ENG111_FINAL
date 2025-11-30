@@ -1,0 +1,57 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+venv.bak/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Development documentation (excluded per project requirements)
+DEVELOPMENT.md
+CHANGELOG.md
+PROJECT_SUMMARY.md
+CONTENT_COMPLETE.md
+FAVICON_NOTE.md
+HEROKU_DEPLOYMENT.md
+TRANSITION_FIX.md
+BACKGROUND_IMAGE_TOGGLE.md
+FINAL_FIXES_SUMMARY.md
+DEPLOY_INSTRUCTIONS.md
+*.md.backup
+notes.txt
+TODO.txt
+extract_pdf.py
+pdf_content.txt
+
+# Flask instance folder
+instance/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+logs/

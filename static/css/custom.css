@@ -1,0 +1,448 @@
+/* Custom styles for Nuclear Energy project */
+
+/* Prevent white flash on page navigation */
+html,
+body {
+  background-color: #1b1f22;
+}
+
+#wrapper {
+  background-color: #1b1f22;
+}
+
+/* ========================================
+   BACKGROUND IMAGE - EASY ON/OFF TOGGLE
+   To disable: Comment out lines 16-27
+   ======================================== */
+#wrapper {
+  background-image: url("../images/harris-nuclear-plant-6187-retouched-3_mid.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay to make content readable */
+#wrapper::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(27, 31, 34, 0.85);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Navigation Enhancements */
+#nav .page-counter {
+  display: inline-block;
+  margin-left: 2em;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+/* Page Navigation Arrows */
+.page-navigation {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.nav-arrow {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 1em;
+  background: rgba(27, 31, 34, 0.95);
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  pointer-events: all;
+  border-radius: 0;
+  font-size: 1.5em;
+  backdrop-filter: blur(10px);
+}
+
+.nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.nav-prev {
+  left: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.nav-next {
+  right: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+.nav-label {
+  font-size: 0.4em;
+  margin-top: 0.5em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.nav-arrow:hover .nav-label {
+  opacity: 1;
+}
+
+/* Progress Bar */
+.progress-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 10001;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  transition: width 0.3s ease;
+}
+
+/* Page Transitions - Disabled for instant load */
+#main {
+  /* Instant display - no delay */
+}
+
+/* Content Sections */
+.content-section {
+  margin-bottom: 3em;
+  padding: 2em;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content-section h2 {
+  color: #ffffff;
+  margin-bottom: 1em;
+  border-bottom: 2px solid rgba(0, 180, 216, 0.5);
+  padding-bottom: 0.5em;
+}
+
+/* Image Gallery/Carousel */
+.image-carousel {
+  position: relative;
+  width: 100%;
+  margin: 2em 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  color: white;
+  padding: 2em;
+  font-size: 0.9em;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: all;
+  backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.carousel-indicators {
+  text-align: center;
+  padding: 1em 0;
+}
+
+.indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #00b4d8;
+  transform: scale(1.3);
+}
+
+/* Grid Layout for Images and Content */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  margin: 2em 0;
+  align-items: start;
+}
+
+.content-grid.reverse {
+  direction: rtl;
+}
+
+.content-grid.reverse > * {
+  direction: ltr;
+}
+
+.grid-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.grid-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.grid-image:hover img {
+  transform: scale(1.05);
+}
+
+.grid-content {
+  padding: 1em;
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin: 2em 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Works Cited Styling */
+.citation {
+  margin-bottom: 1.5em;
+  padding: 1em;
+  padding-left: 3em;
+  text-indent: -2em;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid #00b4d8;
+  border-radius: 0 5px 5px 0;
+}
+
+.citation a {
+  color: #00b4d8;
+  word-wrap: break-word;
+}
+
+.citation a:hover {
+  color: #0077b6;
+}
+
+/* Author Card */
+.author-card {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  margin: 2em 0;
+}
+
+.author-image {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(0, 180, 216, 0.5);
+}
+
+.author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Specific positioning for Joe's image */
+.author-image.joe-image img {
+  object-position: 90% 90%;
+}
+
+.author-info {
+  flex: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 980px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  /* Make images appear below text on mobile */
+  .content-grid .grid-image {
+    order: 2;
+  }
+
+  .content-grid .grid-content {
+    order: 1;
+    padding: 0;
+  }
+
+  /* Fix timeline alignment on mobile */
+  .timeline-item .content-grid {
+    margin: 0;
+  }
+
+  .nav-arrow {
+    padding: 1.5em 0.5em;
+    font-size: 1.2em;
+  }
+
+  .author-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .nav-arrow {
+    font-size: 1em;
+    padding: 1em 0.3em;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  #nav .page-counter {
+    display: block;
+    margin: 1em 0;
+  }
+}
+
+/* Fade-in animations for content */
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Image hover effects */
+.hover-zoom {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* Timeline styling */
+.timeline {
+  position: relative;
+  padding: 2em 0;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 2em 0;
+  border-left: 2px solid rgba(0, 180, 216, 0.5);
+  margin-left: 2em;
+  padding-left: 3em;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 2em;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00b4d8;
+  border: 3px solid #1b1f22;
+}
+
+.timeline-item h3 {
+  color: #00b4d8;
+  margin-bottom: 0.5em;
+}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Timeline & Where - Nuclear Energy{% endblock %}
+
+{% block content %}
+<article class="post featured">
+    <header class="major">
+        <h1>Timeline &amp; Where</h1>
+        <p>Key moments and locations in nuclear energy history</p>
+    </header>
+
+    <div class="content-section fade-in">
+        <h2>A Historical Journey</h2>
+        <p>This problem takes place all across of the U.S., but is most prevalent in states with lots of coal plants which produce a lot of pollution.</p>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item fade-in">
+            <h3>Dec. 20, 1951: First Electricity from a Reactor</h3>
+            <p>In Idaho, at the National Reactor Testing Station, an experimental nuclear reactor provided power for the building it occupied. It did not provide power for a grid and remained classified. (Ellison)</p>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="content-grid">
+                <div class="grid-image hover-zoom">
+                    <img src="{{ url_for('static', filename='images/Timeline ObninskReactor.avif') }}" alt="Obninsk Nuclear Power Plant" />
+                </div>
+                <div class="grid-content">
+                    <h3>June 26, 1954: First Civilian Nuclear Power Plant Opens</h3>
+                    <p>The Obninsk, a Russian reactor, was connected to the grid and supplied power to homes. (Ellison)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="content-grid reverse">
+                <div class="grid-content">
+                    <h3>Mar. 28, 1979: Three Mile Island Partial Meltdown</h3>
+                    <p>Three Mile Island was a reactor in Pennsylvania that, due to a cooling failure, had a partial meltdown. No one died but this event did start and fuel anti-nuclear protests and sentiments. (Ellison)</p>
+                </div>
+                <div class="grid-image hover-zoom">
+                    <img src="{{ url_for('static', filename='images/Timeline ThreeMileIsland.jpg') }}" alt="Three Mile Island" />
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <h3>Apr. 26, 1986: Chernobyl Meltdown</h3>
+            <p>Reactor 4 at the Chernobyl Nuclear Plant in Ukraine exploded after a flawed test. The power surge caused an explosion in the core and tons of radiation was released. Around 30 people died in the first three months because of radiation. This was the last major human error accident to occur. (Ellison)</p>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="content-grid">
+                <div class="grid-image hover-zoom">
+                    <img src="{{ url_for('static', filename='images/Timeline fukushima.webp') }}" alt="Fukushima Nuclear Disaster" />
+                </div>
+                <div class="grid-content">
+                    <h3>Mar. 11, 2011: Fukushima Daiichi Meltdown</h3>
+                    <p>On Mar. 11, 2011, an earthquake caused a tsunami to hit the Japanese Fukushima Daiichi I nuclear power plant. The flooding led to emergency generators failing, causing loss "of the cooling agent" (Ellison).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <h3>July 17, 2024: First Gen IV Reactor in the U.S. Officially Approved</h3>
+            <p>Kairos Power began development of a Gen IV Reactor at Oak Ridge in Tennessee. (Szondy)</p>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <h3>Sep. 16, 2024: First SMR in the U.S. is Under Construction</h3>
+            <p>The Nuclear Regulatory Commision gave Abilene Christian University the construction permits to build an SMR on campus. (Ireland)</p>
+        </div>
+    </div>
+</article>
+{% endblock %}
