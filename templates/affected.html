@@ -1,35 +1,66 @@
-{% extends "base.html" %}
-
-{% block title %}Who Does It Affect - Nuclear Energy{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %}Who Does It Affect - Nuclear Energy{%
+endblock %} {% block content %}
 <article class="post featured">
-    <header class="major">
-        <h1>Who Does It Affect?</h1>
-        <p>The global impact of nuclear energy decisions</p>
-    </header>
+  <header class="major">
+    <h1>Who Does It Affect?</h1>
+    <p>The global impact of nuclear energy decisions</p>
+  </header>
 
-    <div class="content-section fade-in">
-        <p>The failure to implement modern nuclear reactors does not just harm the atmosphere, it affects everyone across the U.S. Energy sources that produce high amounts of pollution, like coal and gas, are still very prevalent today. Coal leads to 161 fatalities per TWh whereas nuclear is only at 0.04 fatalities per TWh, even when factoring in events such as the Chernobyl meltdown (Héctor et al 17). Everyone is affected, but the most affected are young children and the elderly who are more susceptible to pollution-related diseases (WHO).</p>
-    </div>
+  <div class="content-section fade-in">
+    <p>
+      The failure to implement modern nuclear reactors does not just harm the
+      atmosphere, it affects everyone across the U.S. Energy sources that
+      produce high amounts of pollution, like coal and gas, are still very
+      prevalent today. Coal leads to 161 fatalities per TWh whereas nuclear is
+      only at 0.04 fatalities per TWh, even when factoring in events such as the
+      Chernobyl meltdown (Héctor et al 17). Everyone is affected, but the most
+      affected are young children and the elderly who are more susceptible to
+      pollution-related diseases (WHO).
+    </p>
+  </div>
 
-    <div class="content-grid fade-in">
-        <div class="grid-content">
-            <h2>A Real Story: The Bharti Family</h2>
-            <p>Khushboo Bharti, 31, is the parent to her one year old daughter Samaira. Ms. Bharti details how in the middle of the night "I remember her waking up with a violent cough that made her vomit several times" (Yadav). None of the "usual home remedies" worked and she ended up taking her to the hospital (Yadav).</p>
-            
-            <p>"On the way there, Samaira didn't react to anyone or anything. It was very unlike her, she is a bubbly child. She wouldn't even lift her head. It was the worst moment of my life" (Yadav).</p>
-            
-            <p>At the hospital, Samaira was eventually diagnosed with pneumonia, was treated with a "strong steroid nebulization" and was on oxygen support for two days (Yadav). Ever since, Ms. Bharti is on edge and panics "[e]ven if she coughs just a few times" (Yadav).</p>
-        </div>
-        <div class="grid-image hover-zoom">
-            <img src="{{ url_for('static', filename='images/Who does it affect coalplant.jpg') }}" alt="Coal Power Plant" />
-        </div>
-    </div>
+  <div class="content-grid fade-in">
+    <div class="grid-content">
+      <h2>A Real Story: The Bharti Family</h2>
+      <p>
+        Khushboo Bharti, 31, is the parent to her one year old daughter Samaira.
+        Ms. Bharti details how in the middle of the night "I remember her waking
+        up with a violent cough that made her vomit several times" (Yadav). None
+        of the "usual home remedies" worked and she ended up taking her to the
+        hospital (Yadav).
+      </p>
 
-    <div class="content-section fade-in">
-        <h2>The Bigger Picture</h2>
-        <p>Stories like the Bharti family's are not isolated incidents. Air pollution from fossil fuel-based energy production affects millions of families worldwide, particularly in areas near coal and gas power plants. The choice between nuclear energy and fossil fuels has direct consequences for public health, especially for vulnerable populations like children and the elderly.</p>
+      <p>
+        "On the way there, Samaira didn't react to anyone or anything. It was
+        very unlike her, she is a bubbly child. She wouldn't even lift her head.
+        It was the worst moment of my life" (Yadav).
+      </p>
+
+      <p>
+        At the hospital, Samaira was eventually diagnosed with pneumonia, was
+        treated with a "strong steroid nebulization" and was on oxygen support
+        for two days (Yadav). Ever since, Ms. Bharti is on edge and panics
+        "[e]ven if she coughs just a few times" (Yadav).
+      </p>
     </div>
+    <div class="grid-image hover-zoom">
+      <img
+        src="{{ url_for('static', filename='images/Who does it affect coalplant.jpg') }}"
+        alt="Coal Power Plant"
+      />
+    </div>
+  </div>
+
+  <div class="content-section fade-in">
+    <h2>The Bigger Picture</h2>
+    <p>
+      Stories like the Bharti family's are not isolated incidents. Air pollution
+      from fossil fuel-based energy production affects millions of families
+      worldwide, particularly in areas near coal and gas power plants (WHO). The
+      choice between nuclear energy and fossil fuels has direct consequences for
+      public health, especially for vulnerable populations like children and the
+      elderly.
+    </p>
+  </div>
 </article>
 {% endblock %}

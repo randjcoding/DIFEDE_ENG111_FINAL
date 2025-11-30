@@ -147,6 +147,12 @@ body {
   width: auto;
   display: block;
   object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.02);
 }
 
 .carousel-caption {
@@ -158,6 +164,17 @@ body {
   color: white;
   padding: 2em;
   font-size: 0.9em;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.carousel-caption.visible {
+  opacity: 1;
+}
+
+.carousel-item:hover .carousel-caption {
+  opacity: 1;
 }
 
 .carousel-controls {
@@ -222,6 +239,58 @@ body {
 
 .indicator.active:hover {
   background: #0090b8;
+}
+
+/* Full-screen Image Modal */
+.image-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  cursor: pointer;
+  animation: fadeIn 0.3s ease;
+}
+
+.image-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  cursor: default;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 10000;
+}
+
+.image-modal-close:hover {
+  color: #00b4d8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Grid Layout for Images and Content */

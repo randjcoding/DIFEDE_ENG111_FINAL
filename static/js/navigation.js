@@ -31,6 +31,7 @@
             var $items = $container.find('.carousel-item');
             var currentIndex = 0;
             var totalItems = $items.length;
+            var captionTimer;
 
             if (totalItems <= 1) return;
 
@@ -55,6 +56,25 @@
                 $controls.append('<button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>');
                 $carousel.append($controls);
             }
+
+            // Show caption temporarily when changing slides
+            function showCaptionTemporarily() {
+                var $currentCaption = $items.eq(currentIndex).find('.carousel-caption');
+                $currentCaption.addClass('visible');
+                
+                clearTimeout(captionTimer);
+                captionTimer = setTimeout(function() {
+                    $currentCaption.removeClass('visible');
+                }, 3000); // Hide after 3 seconds
+            }
+
+            // Add click handler for full-screen images
+            $items.find('img').on('click', function(e) {
+                e.stopPropagation();
+                var imgSrc = $(this).attr('src');
+                var imgAlt = $(this).attr('alt');
+                openImageModal(imgSrc, imgAlt);
+            });
 
             function updateVisibleIndicators() {
                 var $allIndicators = $indicators.find('.indicator');
@@ -101,10 +121,16 @@
                 
                 // Update which indicators are visible
                 updateVisibleIndicators();
+                
+                // Show caption temporarily
+                showCaptionTemporarily();
             }
             
             // Initialize visible indicators
             updateVisibleIndicators();
+            
+            // Show caption on first load
+            showCaptionTemporarily();
 
             // Button controls
             $carousel.on('click', '.prev-btn', function(e) {
@@ -148,6 +174,42 @@
             }, 5000);
             */
         });
+    }
+
+    // Full-screen image modal
+    function openImageModal(imgSrc, imgAlt) {
+        // Create modal if it doesn't exist
+        if (!$('#imageModal').length) {
+            var modalHtml = '<div id="imageModal" class="image-modal">' +
+                '<span class="image-modal-close">&times;</span>' +
+                '<img src="" alt="" />' +
+                '</div>';
+            $('body').append(modalHtml);
+            
+            // Close modal on click
+            $('#imageModal').on('click', function(e) {
+                if (e.target.id === 'imageModal' || $(e.target).hasClass('image-modal-close')) {
+                    closeImageModal();
+                }
+            });
+            
+            // Close modal on ESC key
+            $(document).on('keydown', function(e) {
+                if (e.keyCode === 27 && $('#imageModal').hasClass('active')) {
+                    closeImageModal();
+                }
+            });
+        }
+        
+        // Set image and show modal
+        $('#imageModal img').attr('src', imgSrc).attr('alt', imgAlt);
+        $('#imageModal').addClass('active');
+        $('body').css('overflow', 'hidden'); // Prevent scrolling
+    }
+
+    function closeImageModal() {
+        $('#imageModal').removeClass('active');
+        $('body').css('overflow', ''); // Restore scrolling
     }
 
     // Smooth scroll for internal links
