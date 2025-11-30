@@ -30,16 +30,19 @@
             var $container = $carousel.find('.carousel-container');
             var $items = $container.find('.carousel-item');
             var currentIndex = 0;
+            var totalItems = $items.length;
 
-            if ($items.length <= 1) return;
+            if (totalItems <= 1) return;
 
-            // Create indicators
+            // Create indicators container
             var $indicators = $('<div class="carousel-indicators"></div>');
+            
+            // Create all indicators
             $items.each(function(index) {
-                var $indicator = $('<span class="indicator"></span>');
+                var $indicator = $('<span class="indicator" data-index="' + index + '"></span>');
                 if (index === 0) $indicator.addClass('active');
                 $indicator.on('click', function() {
-                    goToSlide(index);
+                    goToSlide(parseInt($(this).attr('data-index')));
                 });
                 $indicators.append($indicator);
             });
@@ -53,9 +56,41 @@
                 $carousel.append($controls);
             }
 
+            function updateVisibleIndicators() {
+                var $allIndicators = $indicators.find('.indicator');
+                
+                // If 5 or fewer indicators, show all
+                if (totalItems <= 5) {
+                    $allIndicators.show();
+                    return;
+                }
+                
+                // If more than 5, show only 5 centered around the current index
+                $allIndicators.hide();
+                
+                var start, end;
+                if (currentIndex <= 2) {
+                    // Near the beginning
+                    start = 0;
+                    end = 4;
+                } else if (currentIndex >= totalItems - 3) {
+                    // Near the end
+                    start = totalItems - 5;
+                    end = totalItems - 1;
+                } else {
+                    // In the middle
+                    start = currentIndex - 2;
+                    end = currentIndex + 2;
+                }
+                
+                for (var i = start; i <= end; i++) {
+                    $allIndicators.eq(i).show();
+                }
+            }
+
             function goToSlide(index) {
-                if (index < 0) index = $items.length - 1;
-                if (index >= $items.length) index = 0;
+                if (index < 0) index = totalItems - 1;
+                if (index >= totalItems) index = 0;
                 
                 currentIndex = index;
                 $container.css('transform', 'translateX(-' + (currentIndex * 100) + '%)');
@@ -63,7 +98,13 @@
                 // Update indicators
                 $indicators.find('.indicator').removeClass('active');
                 $indicators.find('.indicator').eq(currentIndex).addClass('active');
+                
+                // Update which indicators are visible
+                updateVisibleIndicators();
             }
+            
+            // Initialize visible indicators
+            updateVisibleIndicators();
 
             // Button controls
             $carousel.on('click', '.prev-btn', function(e) {

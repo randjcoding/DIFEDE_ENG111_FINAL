@@ -1,87 +1,119 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>{% block title %}Nuclear Energy: Past, Present & Future{% endblock %}</title>
+  <head>
+    <title>
+      {% block title %}Nuclear Energy: Past, Present & Future{% endblock %}
+    </title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+
     <!-- Favicon - Nuclear Radiation Symbol -->
-    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
-    <link rel="apple-touch-icon" href="{{ url_for('static', filename='favicon.svg') }}">
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" />
-    <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" /></noscript>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='favicon.svg') }}"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="{{ url_for('static', filename='favicon.svg') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/custom.css') }}"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/noscript.css') }}"
+    /></noscript>
+  </head>
+  <body>
     <!-- Wrapper -->
     <div id="wrapper">
-        
-        <!-- Header -->
-        <header id="header">
-            <a href="{{ url_for('home') }}" class="logo">Nuclear Energy</a>
-        </header>
+      <!-- Header -->
+      <header id="header">
+        <a href="{{ url_for('home') }}" class="logo">Nuclear Energy</a>
+      </header>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="links">
-                {% for page in pages %}
-                <li class="{% if current_page.id == page.id %}active{% endif %}">
-                    <a href="{{ page.route }}">{{ page.abbr }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-            <div class="page-counter">
-                <span>{{ page_number }} / {{ total_pages }}</span>
-            </div>
-        </nav>
-
-        <!-- Main Content -->
-        <div id="main">
-            {% block content %}{% endblock %}
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          {% for page in pages %}
+          <li class="{% if current_page.id == page.id %}active{% endif %}">
+            <a href="{{ page.route }}">{{ page.abbr }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="page-counter">
+          <span>{{ page_number }} / {{ total_pages }}</span>
         </div>
+      </nav>
 
-        <!-- Page Navigation Arrows -->
-        <div class="page-navigation">
-            {% if prev_page %}
-            <a href="{{ prev_page.route }}" class="nav-arrow nav-prev" title="{{ prev_page.name }}">
-                <i class="fas fa-chevron-left"></i>
-                <span class="nav-label">{{ prev_page.abbr }}</span>
-            </a>
-            {% endif %}
-            
-            {% if next_page %}
-            <a href="{{ next_page.route }}" class="nav-arrow nav-next" title="{{ next_page.name }}">
-                <span class="nav-label">{{ next_page.abbr }}</span>
-                <i class="fas fa-chevron-right"></i>
-            </a>
-            {% endif %}
-        </div>
+      <!-- Main Content -->
+      <div id="main">{% block content %}{% endblock %}</div>
 
-        <!-- Progress Bar -->
-        <div class="progress-bar">
-            <div class="progress-fill" style="width: {{ (page_number / total_pages * 100) }}%"></div>
-        </div>
+      <!-- Page Navigation Arrows -->
+      <div class="page-navigation">
+        {% if prev_page %}
+        <a
+          href="{{ prev_page.route }}"
+          class="nav-arrow nav-prev"
+          title="{{ prev_page.name }}"
+        >
+          <i class="fas fa-chevron-left"></i>
+          <span class="nav-label">{{ prev_page.abbr }}</span>
+        </a>
+        {% endif %} {% if next_page %}
+        <a
+          href="{{ next_page.route }}"
+          class="nav-arrow nav-next"
+          title="{{ next_page.name }}"
+        >
+          <span class="nav-label">{{ next_page.abbr }}</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+        {% endif %}
+      </div>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <section class="split contact">
-                <section>
-                    <h3>Project</h3>
-                    <p>ENG 111 Final Project<br />Nuclear Energy: Past, Present & Future</p>
-                </section>
-                <section>
-                    <h3>Navigation</h3>
-                    <p>Use the navigation bar above or arrow keys (← →) to browse</p>
-                </section>
-            </section>
-        </footer>
+      <!-- Progress Bar -->
+      <div class="progress-bar">
+        <div
+          class="progress-fill"
+          style="width: {{ (page_number / total_pages * 100) }}%"
+        ></div>
+      </div>
 
-        <!-- Copyright -->
-        <div id="copyright">
-            <ul><li>&copy; 2025 ENG 111 Project</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-        </div>
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact">
+          <section>
+            <h3>Project</h3>
+            <p>
+              ENG 111 Final Project<br />Nuclear Energy: Past, Present & Future
+            </p>
+          </section>
+          <section>
+            <h3>Navigation</h3>
+            <p>Use the navigation bar above or arrow keys (← →) to browse</p>
+          </section>
+        </section>
+      </footer>
 
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul>
+          <li>&copy; 2025 ENG 111 Project</li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
     </div>
 
     <!-- Scripts -->
@@ -93,6 +125,5 @@
     <script src="{{ url_for('static', filename='js/util.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/navigation.js') }}"></script>
-</body>
+  </body>
 </html>
-
