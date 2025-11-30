@@ -10,30 +10,7 @@ body {
   background-color: #1b1f22;
 }
 
-/* ========================================
-   BACKGROUND IMAGE - EASY ON/OFF TOGGLE
-   To disable: Comment out lines 16-27
-   ======================================== */
-#wrapper {
-  background-image: url("../images/harris-nuclear-plant-6187-retouched-3_mid.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-/* Dark overlay to make content readable */
-#wrapper::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(27, 31, 34, 0.85);
-  z-index: -1;
-  pointer-events: none;
-}
+/* Background image removed - using default template background */
 
 /* Navigation Enhancements */
 #nav .page-counter {
